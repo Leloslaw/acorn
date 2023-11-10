@@ -31,7 +31,7 @@ import {isIdentifierChar, isIdentifierStart} from "./identifier.js"
 import {Token} from "./tokenize.js"
 import {isNewLine, lineBreak, lineBreakG, nonASCIIwhitespace} from "./whitespace.js"
 
-export const version = "8.10.0"
+export const version = "8.11.2"
 export {
   Parser,
   defaultOptions,
@@ -76,11 +76,10 @@ Parser.acorn = {
 }
 
 // The main exported interface (under `self.acorn` when in the
-// browser) is a `parse` function that takes a code string and
-// returns an abstract syntax tree as specified by [Mozilla parser
-// API][api].
+// browser) is a `parse` function that takes a code string and returns
+// an abstract syntax tree as specified by the [ESTree spec][estree].
 //
-// [api]: https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API
+// [estree]: https://github.com/estree/estree
 
 export function parse(input, options) {
   return Parser.parse(input, options)
